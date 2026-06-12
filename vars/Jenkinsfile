@@ -1,0 +1,15 @@
+@Library('jenkins-shared-library') _
+import org.devops.GitUtils
+
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps 
+            {script
+            {
+                GitUtils.cloneRepo('https://github.com/pranavlonsane777/CI-Repo.git','master')
+            }}
+        }
+    }
+}
