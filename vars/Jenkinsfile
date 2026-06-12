@@ -1,13 +1,18 @@
 @Library('jenkins-shared-library') _
+
 pipeline {
     agent any
+
     stages {
         stage('Checkout') {
-            steps 
-            {script
-            {
-                GitUtils.cloneRepo('https://github.com/pranavlonsane777/CI-Repo.git','master')
-            }}
+            steps {
+                script {
+                    GitUtils.cloneRepo(
+                        'https://github.com/pranavlonsane777/CI-Repo.git',
+                        'master'
+                    )
+                }
+            }
         }
     }
 }
